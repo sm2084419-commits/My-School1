@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8" />
+  <title>ဒြပ်ဝတ္ထုများပြောင်းလဲခြင်း - အမှန် / အမှား</title>
+  <style>
+    body {
+      font-family: "Myanmar Text", sans-serif;
+      line-height: 1.6;
+      background-color: #f0f8ff;
+      margin: 40px;
+    }
+
+    h1 {
+      color: #2a7a3b;
+    }
+
+    .question {
+      background-color: #fff;
+      border: 1px solid #ccc;
+      padding: 15px;
+      margin-bottom: 15px;
+      border-radius: 8px;
+    }
+
+    .question p {
+      margin-bottom: 8px;
+    }
+
+    .question label {
+      display: inline-block;
+      margin-right: 20px;
+    }
+
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      background-color: #2a7a3b;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    #result {
+      margin-top: 20px;
+      font-size: 18px;
+      font-weight: bold;
+      color: #1a4d2e;
+    }
+  </style>
+</head>
+<body>
+
+  <h1>အမှန် / အမှား လေ့ကျင့်ခန်း</h1>
+  <h2>သတ္တမတန်း – သိပ္ပံ – အခန်း (၅) – ဒြပ်ဝတ္ထုများပြောင်းလဲခြင်း</h2>
+
+  <form id="quizForm">
+
+    <div class="question">
+      <p>၁။ အသက်ငယ်ရာမှ ကြီးလာခြင်းသည် ရုပ်ပြောင်းလဲခြင်းဖြစ်သည်။</p>
+      <label><input type="radio" name="q1" value="false"> အမှန်</label>
+      <label><input type="radio" name="q1" value="true"> အမှား</label>
+    </div>
+
+    <div class="question">
+      <p>၂။ ရေခဲမှ ရေသို့ပြောင်းလဲခြင်းသည် ရုပ်ပြောင်းလဲခြင်းဖြစ်သည်။</p>
+      <label><input type="radio" name="q2" value="true"> အမှန်</label>
+      <label><input type="radio" name="q2" value="false"> အမှား</label>
+    </div>
+
+    <div class="question">
+      <p>၃။ ကြက်ဥကြော်ခြင်းသည် ဓာတ်ပြောင်းလဲခြင်းဖြစ်သည်။</p>
+      <label><input type="radio" name="q3" value="true"> အမှန်</label>
+      <label><input type="radio" name="q3" value="false"> အမှား</label>
+    </div>
+
+    <div class="question">
+      <p>၄။ သံချေးတက်ခြင်းသည် ရုပ်ပြောင်းလဲခြင်း ဖြစ်သည်။</p>
+      <label><input type="radio" name="q4" value="false"> အမှန်</label>
+      <label><input type="radio" name="q4" value="true"> အမှား</label>
+    </div>
+
+    <div class="question">
+      <p>၅။ ကာဗွန် မီးလောင်ကျွမ်းခြင်းသည် ဓာတ်ပြောင်းလဲခြင်းဖြစ်သည်။</p>
+      <label><input type="radio" name="q5" value="true"> အမှန်</label>
+      <label><input type="radio" name="q5" value="false"> အမှား</label>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">ရမှတ်စစ်ရန်</button>
+
+    <div id="result"></div>
+
+  </form>
+
+  <script>
+    function checkAnswers() {
+      const answers = {
+        q1: "false",  // ✅ တုံ့ပြန်မှုမဟုတ်ဘဲ ရေ-ဆီကွဲနေတတ်သည် (ရုပ်ပိုင်း)
+        q2: "true",   // ✅ သံချေးဖြစ်သည်
+        q3: "true",   // ✅ မီးရှို့လျှင် အနံ့ထွက်သည်
+        q4: "true",   // ❌ သံချေးဖြစ်ခြင်းသည် ဓာတုပြောင်းလဲမှု (မှားဟုတင်)
+        q5: "true"    // ✅ ရေကိုငွေ့ဖယ်ကာ ဆားပြန်ရနိုင်သည်
+      };
+
+      let score = 0;
+
+      for (let i = 1; i <= 5; i++) {
+        const radios = document.getElementsByName("q" + i);
+        for (let radio of radios) {
+          if (radio.checked && radio.value === answers["q" + i]) {
+            score++;
+          }
+        }
+      }
+
+      document.getElementById("result").innerText =
+        "သင်ရရှိသော ရမှတ် = " + score + " / 5";
+    }
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Grade-7 - ပင်မစာမျက်နှာ</title>
+  <link rel="stylesheet" href="change.css">
+  <style>
+    main {max-width:1000px; margin:18px auto; padding:0 12px;}
+    .hero {
+      background: var(--primary);
+      color: rgb(10, 10, 10);
+      border-radius: 12px;
+      padding: 40px 20px;
+      text-align: center;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+    .hero h1 {margin:0; font-size:2rem;}
+    .hero p {margin-top:8px; font-size:1.1rem;}
+    .cards {display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin-top:20px;}
+    .card {
+      background: var(--card);
+      border-radius:10px;
+      padding:16px;
+      box-shadow:0 6px 18px rgba(0,0,0,0.05);
+      transition: transform .25s ease;
+    }
+    .card:hover {transform:translateY(-5px);}
+    .card h3 {margin:0 0 10px;}
+    .card p {font-size:0.95rem; line-height:1.5;}
+    footer {
+      margin-top:28px;
+      padding:12px;
+      background: var(--secondary);
+      color: rgb(14, 14, 14);
+      text-align: center;
+      border-radius:8px;
+    }
+    
+  </style>
+</head>
+<body>
+
+  <header>
+    <div class="header-container">
+      <div class="logo">
+        <img src="Photo/မုဒိတာ-Recovered.png" alt="Logo" width="100">
+      </div>
+      <div class="title-box">
+        <h1>မုဒိတာကိုယ်ပိုင်အထက်တန်းကျောင်း </h1>
+        <p class="subtitle">တနင်္သာရီတိုင်းဒေသကြီး၊ ထားဝယ်မြို့</p>
+      </div>
+    </div>
+  </header>
+
+  <nav>
+    <div class="menu-toggle" aria-label="Toggle menu">&#9776;</div>
+    <ul>
+      <li><a href="home.html" class="active">ပင်မစာမျက်နှာ</a></li>
+      <li><a href="Objective.html">ရည်ရွယ်ချက်</a></li>
+      <li><a href="lesson.html">သင်ခန်းစာများ</a></li>
+      <li><a href="Reference.html">လေ့ကျင့်ခန်းများ</a></li>
+      <li><a href="Thankspeak.html">ကြော်ငြာသင်ပုန်း</a></li>
+      <li><a href="wireframe.html">ကျောင်း၏လှုပ်ရှားမှုမှတ်တမ်းများ</a></li>
+    </ul>
+  </nav>
+<main>
+  <div class="objective-card">
+    <h2>ရည်ရွယ်ချက်</h2>
+    
+    <ul>
+      <li>"ကျောင်းနှင့်ပတ်သက်သော အချက်အလက်များကို ကျောင်းသားများ၊ မိဘများနှင့် အများပြည်သူထံသို့ လွယ်ကူမြန်ဆန်စွာ ရရှိနိုင်စေရန်နှင့် ကျောင်း၏ပညာရေးနှင့် လှုပ်ရှားမှုများကို ဖော်ပြပေးရန် ဖြစ်သည်။"</li>
+    </ul>
+  </div>
+</main>
+
+<footer>
+  <p>Muditar Private School. Phone-09698000773, 09960006160</p>
+</footer>
+
+<script>
+  const menuToggle = document.querySelector('.menu-toggle');
+  const navLinks = document.querySelector('nav ul');
+  menuToggle.addEventListener('click', () => {
+    navLinks.classList.toggle('active');
+  });
+</script>
+
+</body>
+</html>

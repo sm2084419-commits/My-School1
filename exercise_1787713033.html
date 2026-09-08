@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ဒြပ်ဝတ္ထုများပြောင်းလဲခြင်း - လေ့ကျင့်ခန်းများ</title>
+  <link rel="stylesheet" href="change.css">
+  <style>
+    .question, .match, .quiz-box {
+      margin: 15px 0;
+      padding: 10px;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+    }
+    .option {
+      margin: 5px 0;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      cursor: pointer;
+    }
+    .option.correct { background: #d4edda; }
+    .option.wrong { background: #f8d7da; }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="header-container">
+    <div class="logo">
+      <img src="image/100-removebg-preview.png" alt="Logo" width="100">
+    </div>
+    <div class="title-box">
+      <h1>Grade-7 - သိပ္ပံ</h1>
+      <p class="subtitle">အခန်း (၅) - ဒြပ်ဝတ္ထုများပြောင်းလဲခြင်း (Change of Matter)</p>
+    </div>
+  </div>
+</header>
+
+<nav>
+  <div class="menu-toggle" aria-label="Toggle menu">&#9776;</div>
+  <ul>
+    <li><a href="home.html">ပင်မစာမျက်နှာ</a></li>
+    <li><a href="Objective.html">ရည်ရွယ်ချက်</a></li>
+    <li><a href="lesson.html">သင်ခန်းစာများ</a></li>
+    <li><a href="Exercise.html">လေ့ကျင့်ခန်းများ</a></li>
+    <li><a href="Bio.html">အဖွဲ့ဝင်များ</a></li>
+    <li><a href="Reference.html">ကိုးကားစာရင်းများ</a></li>
+    <li><a href="Thankspeak.html">ကျေးဇူးတင်လွှာ</a></li>
+    <li><a href="wireframe.html">မူကြမ်းပုံစံ</a></li>
+    <li><a href="Designplan.html">ဒီဇိုင်းအစီအစဉ်</a></li>
+  </ul>
+</nav>
+
+<main class="container">
+
+  <!-- Multiple Choice Questions -->
+  <section class="exercise">
+    <h2>အဖြေမှန်ရွေးချယ်မှု (Multiple Choice)</h2>
+
+    <div class="question">
+      <p>1. ရေဟာ ဘယ် temperature မှာ ငွေ့ပျံသွားမလဲ?</p>
+      <label><input type="radio" name="q1"> 0°C</label>
+      <label><input type="radio" name="q1"> 50°C</label>
+      <label><input type="radio" name="q1" data-correct="true"> 100°C</label>
+      <label><input type="radio" name="q1"> -10°C</label>
+    </div>
+
+    <div class="question">
+      <p>2. အရည်ကို အပူပေးလိုက်သောအခါ မည်သို့ပြောင်းလဲသွားမည်နည်း?</p>
+      <label><input type="radio" name="q2"> အစိုင်အခဲ (solid)</label>
+      <label><input type="radio" name="q2"> အရည် (liquid)</label>
+      <label><input type="radio" name="q2" data-correct="true"> ငွေ့ (gas)</label>
+      <label><input type="radio" name="q2"> တစ်ခုမှမဟုတ် (Nothing)</label>
+    </div>
+
+    <div class="question">
+      <p>3. အေးမှုကြောင့် ရေက ဘာဖြစ်သွားမလဲ?</p>
+      <label><input type="radio" name="q3"> ငွေ့</label>
+      <label><input type="radio" name="q3" data-correct="true"> ရေခဲ</label>
+      <label><input type="radio" name="q3"> အရည်</label>
+      <label><input type="radio" name="q3"> ဓာတုဗေဒပြောင်းလဲမှု</label>
+    </div>
+
+    <div class="question">
+      <p>4. မီးသွေးလောင်ကျွမ်းသွားလျှင် ဘာဖြစ်သွားမလဲ?</p>
+      <label><input type="radio" name="q4"> Physical Change</label>
+      <label><input type="radio" name="q4" data-correct="true"> Chemical Change</label>
+      <label><input type="radio" name="q4"> Melting</label>
+      <label><input type="radio" name="q4"> Freezing</label>
+    </div>
+
+    <div class="question">
+      <p>5. ငွေ့က အေးသွားရင် ဘာဖြစ်သွားမလဲ?</p>
+      <label><input type="radio" name="q5" data-correct="true"> အရည်</label>
+      <label><input type="radio" name="q5"> အငွေ့</label>
+      <label><input type="radio" name="q5"> အစိုင်အခဲ</label>
+      <label><input type="radio" name="q5"> ဓာတုဗေဒပြောင်းလဲမှု</label>
+    </div>
+  </section>
+
+  <!-- Matching Questions -->
+  <section class="exercise">
+    <h2>အဖြေမှန်ယှဉ်တွဲခြင်း (Matching)</h2>
+
+    <div class="match">
+      <p>1. ကလေးမှလူကြီး</p>
+      <select data-correct="ရူပပြောင်းလဲမှု">
+        <option>ရွေးချယ်ပါ</option>
+        <option>အပူသက်ရောက်မှု</option>
+        <option>အေးမှု</option>
+        <option>ရူပပြောင်းလဲမှု</option>
+      </select>
+    </div>
+
+    <div class="match">
+      <p>2. ရေမှ ငွေ့</p>
+      <select data-correct="အပူသက်ရောက်မှု">
+        <option>ရွေးချယ်ပါ</option>
+        <option>အပူသက်ရောက်မှု</option>
+        <option>အေးမှု</option>
+        <option>ဓာတုဗေဒပြောင်းလဲမှု</option>
+      </select>
+    </div>
+
+    <div class="match">
+      <p>3. ငွေ့မှ အရည်</p>
+      <select data-correct="အေးမှု">
+        <option>ရွေးချယ်ပါ</option>
+        <option>အပူသက်ရောက်မှု</option>
+        <option>အေးမှု</option>
+        <option>ဓာတုဗေဒပြောင်းလဲမှု</option>
+      </select>
+    </div>
+
+    <div class="match">
+      <p>4. မီးသွေးမီးလောင်ခြင်း</p>
+      <select data-correct="ဓာတုဗေဒပြောင်းလဲမှု">
+        <option>ရွေးချယ်ပါ</option>
+        <option>အပူသက်ရောက်မှု</option>
+        <option>အေးမှု</option>
+        <option>ဓာတုဗေဒပြောင်းလဲမှု</option>
+      </select>
+    </div>
+
+    <div class="match">
+      <p>5. ရေမှ ရေခဲ</p>
+      <select data-correct="အေးမှု">
+        <option>ရွေးချယ်ပါ</option>
+        <option>အပူသက်ရောက်မှု</option>
+        <option>အေးမှု</option>
+        <option>ဓာတုဗေဒပြောင်းလဲမှု</option>
+      </select>
+    </div>
+  </section>
+
+  <!-- Clickable Quiz Boxes -->
+  <section class="exercise">
+    <h2>အဖြေမှန်ကိုနှိပ်၍ ရွေးပါ (Click Quiz)</h2>
+
+    <div class="quiz-box">
+      <h2>Q1. ရေသည် အပူခံရသောအခါ မည်သို့ပြောင်းလဲသွားသနည်း။?</h2>
+      <div class="option" onclick="checkAnswer(this,true)">အငွေ့ဖြစ်သည်</div>
+      <div class="option" onclick="checkAnswer(this,false)">ရေခဲဖြစ်သည်</div>
+      <div class="option" onclick="checkAnswer(this,false)">အရည်အနေအထားပဲရှိနေသည်</div>
+    </div>
+
+    <div class="quiz-box">
+      <h2>Q2. ရေခဲကို အပူပေးလျှင် ဘာဖြစ်မလဲ?</h2>
+      <div class="option" onclick="checkAnswer(this,false)">အငွေ့ဖြစ်သည်</div>
+      <div class="option" onclick="checkAnswer(this,true)">ရေဖြစ်သည်</div>
+      <div class="option" onclick="checkAnswer(this,false)">မပြောင်းလဲပဲ အေးတယ်</div>
+    </div>
+
+    <div class="quiz-box">
+      <h2>Q3. အောက်ပါအချက်များမှ မည်သည့်အချက်သည် ဓာတုဗေဒဆိုင်ရာ ပြောင်းလဲမှု ဖြစ်သနည်း။?</h2>
+      <div class="option" onclick="checkAnswer(this,false)">ရေခဲရေပျော်ခြင်း</div>
+      <div class="option" onclick="checkAnswer(this,false)">ရေ ပြောင်းအငွေ့</div>
+      <div class="option" onclick="checkAnswer(this,true)">မီးလောင်ခြင်း</div>
+    </div>
+
+    <div class="quiz-box">
+      <h2>Q4. အေးမှုကြောင့် ရေက ဘာဖြစ်သွားမလဲ?</h2>
+      <div class="option" onclick="checkAnswer(this,true)">ရေခဲ</div>
+      <div class="option" onclick="checkAnswer(this,false)">အငွေ့</div>
+      <div class="option" onclick="checkAnswer(this,false)">မပြောင်းလဲ</div>
+    </div>
+
+    <div class="quiz-box">
+      <h2>Q5. အပူပေးခြင်းကြောင့် အငွေ့ ဖြစ်သည့်ဖြစ်စဉ်ကို ဘာလို့ခေါ်သလဲ?</h2>
+      <div class="option" onclick="checkAnswer(this,true)">အငွေ့ပျံခြင်း (Evaporation)</div>
+      <div class="option" onclick="checkAnswer(this,false)">ငွေ့ရည်ဖွဲ့ခြင်း (Condensation)</div>
+      <div class="option" onclick="checkAnswer(this,false)">မိုးရွာခြင်း (Precipitation)</div>
+    </div>
+  </section>
+
+  <!-- Check Button -->
+  <div class="check-btn">
+    <button onclick="checkAnswers()">✔ အဖြေများစစ်ရန်</button>
+  </div>
+
+  <div id="result"></div>
+</main>
+
+<footer>
+  <p>Grade 7 Science - Chapter 5 | Group 1</p>
+</footer>
+
+<!-- Audio -->
+<audio id="correctSound" src="audio/ding-sfx-330333.mp3" preload="auto"></audio>
+<audio id="wrongSound" src="audio/glass-break-316720.mp3" preload="auto"></audio>
+
+<script>
+function checkAnswers() {
+  let score = 0;
+  let total = 15;
+
+  const correctSound = document.getElementById("correctSound");
+  const wrongSound = document.getElementById("wrongSound");
+
+  document.querySelectorAll('.question').forEach(q => {
+    const correct = q.querySelector('input[data-correct="true"]');
+    if (correct && correct.checked) {
+      q.style.background = "#d4edda";
+      score++;
+      correctSound.play();
+    } else {
+      q.style.background = "#f8d7da";
+      wrongSound.play();
+    }
+  });
+
+  document.querySelectorAll('.match select').forEach(sel => {
+    if (sel.value === sel.dataset.correct) {
+      sel.style.background = "#d4edda";
+      score++;
+      correctSound.play();
+    } else {
+      sel.style.background = "#f8d7da";
+      wrongSound.play();
+    }
+  });
+
+  document.getElementById("result").innerHTML =
+    `<h3>နောက်ဆုံးရမှတ် = ${score} / ${total}</h3>`;
+}
+
+function checkAnswer(el, isCorrect) {
+  const correctSound = document.getElementById("correctSound");
+  const wrongSound = document.getElementById("wrongSound");
+
+  if (isCorrect) {
+    el.classList.add("correct");
+    correctSound.play();
+  } else {
+    el.classList.add("wrong");
+    wrongSound.play();
+  }
+}
+</script>
+
+</body>
+</html>

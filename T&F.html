@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>true and false</title>
+    
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f2f2;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+    }
+
+    .quiz-card {
+      background: white;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+      width: 400px;
+      text-align: center;
+    }
+
+    .question {
+      font-size: 20px;
+      margin-bottom: 20px;
+    }
+
+    .btn {
+      padding: 10px 20px;
+      font-size: 16px;
+      margin: 10px;
+      cursor: pointer;
+      border: none;
+      border-radius: 5px;
+      color: white;
+    }
+
+    .btn-true {
+      background-color: #4CAF50;
+    }
+
+    .btn-false {
+      background-color: #f44336;
+    }
+
+    #alertBox {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: white;
+      padding: 40px;
+      font-size: 40px;
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      display: none;
+      z-index: 999;
+    }
+  </style>
+</head>
+<body>
+
+<div class="quiz-card">
+  <div id="question" class="question"></div>
+  <button class="btn btn-true" onclick="submitAnswer(true)">True</button>
+  <button class="btn btn-false" onclick="submitAnswer(false)">False</button>
+</div>
+
+<div id="alertBox">✅</div>
+
+<audio id="correctSound" src="correct.mp3" preload="auto"></audio>
+<audio id="wrongSound" src="wrong.mp3" preload="auto"></audio>
+
+<script>
+  const questions = [
+    { question: "The Earth is flat.", answer: false },
+    { question: "HTML stands for HyperText Markup Language.", answer: true },
+    { question: "CSS is used to style web pages.", answer: true },
+    { question: "JavaScript is the same as Java.", answer: false },
+    { question: "The sun rises in the west.", answer: false }
+  ];
+
+  let currentQuestion = 0;
+
+  const questionElement = document.getElementById('question');
+  const alertBox = document.getElementById('alertBox');
+  const correctSound = document.getElementById('correctSound');
+  const wrongSound = document.getElementById('wrongSound');
+
+  function loadQuestion() {
+    if (currentQuestion < questions.length) {
+      questionElement.textContent = questions[currentQuestion].question;
+    } else {
+      questionElement.textContent = "Quiz Completed!";
+      document.querySelector('.btn-true').style.display = 'none';
+      document.querySelector('.btn-false').style.display = 'none';
+    }
+  }
+
+  function submitAnswer(userAnswer) {
+    const correctAnswer = questions[currentQuestion].answer;
+    const isCorrect = userAnswer === correctAnswer;
+
+    // Show alert box
+    alertBox.textContent = isCorrect ? '✅' : '❌';
+    alertBox.style.display = 'block';
+
+    // Play sound
+    if (isCorrect) {
+      correctSound.play();
+    } else {
+      wrongSound.play();
+    }
+
+    // Hide alert box after 3 seconds
+    setTimeout(() => {
+      alertBox.style.display = 'none';
+      currentQuestion++;
+      loadQuestion();
+    }, 3000);
+  }
+
+  // Initialize first question
+  loadQuestion();
+</script>
+</body>
+</html>
