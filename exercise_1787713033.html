@@ -189,6 +189,39 @@
       <div class="option" onclick="checkAnswer(this,false)">ငွေ့ရည်ဖွဲ့ခြင်း (Condensation)</div>
       <div class="option" onclick="checkAnswer(this,false)">မိုးရွာခြင်း (Precipitation)</div>
     </div>
+    
+    <div class="question">
+      <p>၁။ အသက်ငယ်ရာမှ ကြီးလာခြင်းသည် ရုပ်ပြောင်းလဲခြင်းဖြစ်သည်။</p>
+      <label><input type="radio" name="q1" value="false"> အမှန်</label>
+      <label><input type="radio" name="q1" value="true"> အမှား</label>
+    </div>
+
+    <div class="question">
+      <p>၂။ ရေခဲမှ ရေသို့ပြောင်းလဲခြင်းသည် ရုပ်ပြောင်းလဲခြင်းဖြစ်သည်။</p>
+      <label><input type="radio" name="q2" value="true"> အမှန်</label>
+      <label><input type="radio" name="q2" value="false"> အမှား</label>
+    </div>
+
+    <div class="question">
+      <p>၃။ ကြက်ဥကြော်ခြင်းသည် ဓာတ်ပြောင်းလဲခြင်းဖြစ်သည်။</p>
+      <label><input type="radio" name="q3" value="true"> အမှန်</label>
+      <label><input type="radio" name="q3" value="false"> အမှား</label>
+    </div>
+
+    <div class="question">
+      <p>၄။ သံချေးတက်ခြင်းသည် ရုပ်ပြောင်းလဲခြင်း ဖြစ်သည်။</p>
+      <label><input type="radio" name="q4" value="false"> အမှန်</label>
+      <label><input type="radio" name="q4" value="true"> အမှား</label>
+    </div>
+
+    <div class="question">
+      <p>၅။ ကာဗွန် မီးလောင်ကျွမ်းခြင်းသည် ဓာတ်ပြောင်းလဲခြင်းဖြစ်သည်။</p>
+      <label><input type="radio" name="q5" value="true"> အမှန်</label>
+      <label><input type="radio" name="q5" value="false"> အမှား</label>
+    </div>
+
+    <button type="button" onclick="checkAnswers()">ရမှတ်စစ်ရန်</button>
+
   </section>
 
   <!-- Check Button -->
@@ -210,7 +243,7 @@
 <script>
 function checkAnswers() {
   let score = 0;
-  let total = 15;
+  let total = 20;
 
   const correctSound = document.getElementById("correctSound");
   const wrongSound = document.getElementById("wrongSound");
