@@ -1,114 +1,53 @@
-/* Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-/* Body style */
-body {
-    font-family: Arial, sans-serif;
-    background: #f2f2f2;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    min-height: 100vh;
-}
-
-/* Login box */
-.login-box {
-    width: 350px;
-    padding: 30px;
-    background: white;
-    border-radius: 10px;
-    box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
-}
-
-.login-box h2 {
-    text-align: center;
-    margin-bottom: 25px;
-}
-
-.login-box label {
-    display: block;
-    margin-bottom: 5px;
-    font-weight: bold;
-}
-
-.login-box input {
-    width: 100%;
-    padding: 12px;
-    margin-bottom: 18px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.login-box button {
-    width: 100%;
-    padding: 12px;
-    border: none;
-    border-radius: 5px;
-    background: #333;
-    color: white;
-    cursor: pointer;
-}
-
-/* Navbar */
 nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    background-color: #163b63;
-    padding: 15px 30px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #163b63;
+  padding: 15px 30px;
 }
 
-.nav-links {
-    display: flex;
-    list-style: none;
-    gap: 20px;
+#nav-links {
+  display: flex;
+  list-style: none;
+  gap: 20px;
 }
 
-.nav-links a {
-    color: white;
-    text-decoration: none;
+#nav-links a {
+  color: white;
+  text-decoration: none;
 }
 
-.menu-toggle {
-    display: none;
-    font-size: 30px;
-    background: none;
-    border: none;
-    color: white;
-    cursor: pointer;
+#menu-toggle {
+  display: none;
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: white;
+  cursor: pointer;
 }
 
-/* Responsive */
 @media (max-width: 768px) {
-    nav {
-        padding: 15px 20px;
-    }
+  #menu-toggle {
+    display: block;
+  }
 
-    .menu-toggle {
-        display: block;
-    }
+  #nav-links {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background-color: #163b63;
+    text-align: center;
+    padding: 20px 0;
+  }
 
-    .nav-links {
-        display: none;
-        flex-direction: column;
-        position: absolute;
-        top: 70px;
-        left: 0;
-        width: 100%;
-        background-color: #163b63;
-        text-align: center;
-        padding: 20px 0;
-    }
+  #nav-links.active {
+    display: flex;
+  }
 
-    .nav-links.active {
-        display: flex;
-    }
-
-    .nav-links li {
-        padding: 10px;
-    }
+  #nav-links li {
+    padding: 10px;
+  }
 }
