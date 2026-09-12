@@ -22,7 +22,7 @@ nav {
   font-size: 30px;
   background: white;
   border: none;
-  color: white;
+  color: #ff0000; /* ✅ အနီရောင် */
   cursor: pointer;
 }
 
