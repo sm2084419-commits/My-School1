@@ -1,27 +1,26 @@
+/* Reset */
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
+/* Body style */
 body {
     font-family: Arial, sans-serif;
     background: #f2f2f2;
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     min-height: 100vh;
 }
 
+/* Login box */
 .login-box {
     width: 350px;
     padding: 30px;
-
     background: white;
     border-radius: 10px;
-
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
 }
 
@@ -40,7 +39,6 @@ body {
     width: 100%;
     padding: 12px;
     margin-bottom: 18px;
-
     border: 1px solid #ccc;
     border-radius: 5px;
 }
@@ -48,15 +46,15 @@ body {
 .login-box button {
     width: 100%;
     padding: 12px;
-
     border: none;
     border-radius: 5px;
-
     background: #333;
     color: white;
-    }
+    cursor: pointer;
+}
 
-    nav {
+/* Navbar */
+nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -84,8 +82,8 @@ body {
     cursor: pointer;
 }
 
-    @media (max-width: 768px) {
-
+/* Responsive */
+@media (max-width: 768px) {
     nav {
         padding: 15px 20px;
     }
@@ -113,6 +111,4 @@ body {
     .nav-links li {
         padding: 10px;
     }
-
-
-   
+}
