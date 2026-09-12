@@ -54,6 +54,29 @@ body {
 
     background: #333;
     color: white;
+    @media (max-width: 768px) {
+
+    body {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        width: 100%;
+        padding: 10px;
+        box-sizing: border-box;
+    }
+
+    nav {
+        flex-direction: column;
+    }
+
+    img {
+        max-width: 100%;
+        height: auto;
+    }
+
+}
 
     font-size: 16px;
     cursor: pointer;
