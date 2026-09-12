@@ -1,18 +1,6 @@
-function login() {
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
 
-    let email = document.getElementById("email").value;
-    let password = document.getElementById("password").value;
-
-    let savedEmail = localStorage.getItem("email");
-    let savedPassword = localStorage.getItem("password");
-
-    if (email === savedEmail && password === savedPassword) {
-
-        window.location.href = "home.html";
-
-    } else {
-
-        alert("Email or Password is incorrect!");
-
-    }
-}
+menuToggle.addEventListener("click", function() {
+  navLinks.classList.toggle("active");
+});
