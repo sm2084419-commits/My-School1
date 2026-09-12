@@ -54,4 +54,32 @@ body {
 
     background: #333;
     color: white;
+
+    nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #163b63;
+    padding: 15px 30px;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+}
+
+.menu-toggle {
+    display: none;
+    font-size: 30px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
    
