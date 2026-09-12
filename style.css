@@ -54,6 +54,7 @@ body {
 
     background: #333;
     color: white;
+    }
 
     nav {
     display: flex;
@@ -113,5 +114,5 @@ body {
         padding: 10px;
     }
 
-}
+
    
