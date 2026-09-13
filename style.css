@@ -52,6 +52,24 @@ nav {
     padding: 10px;
   }
 }
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #f2f2f2;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    min-height: 100vh;
+}
+
 .login-box {
     width: 350px;
     padding: 30px;
@@ -99,7 +117,6 @@ nav {
 .login-box button:hover {
     background: #555;
 }
-
 .password-box {
     display: flex;
     align-items: center;
