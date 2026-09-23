@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ကျောင်းလှုပ်ရှားမှုများ တင်ရန်</title>
+    <style>
+        * {
+            box-sizing: border-box;
+            font-family: 'Pyidaungsu', sans-serif;
+        }
+        body {
+            background-color: #f4f6f9;
+            margin: 0;
+            padding: 20px;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        h2 {
+            text-align: center;
+            color: #333;
+        }
+        /* Form Styling */
+        .upload-form {
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 10px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn-submit {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            width: 100%;
+            font-size: 16px;
+        }
+        .btn-submit:hover {
+            background-color: #218838;
+        }
+        /* Activities Display Styling */
+        .activity-list {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+        @media (max-width: 600px) {
+            .activity-list {
+                grid-template-columns: 1fr;
+            }
+        }
+        .activity-card {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .activity-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+        .activity-content {
+            padding: 15px;
+        }
+        .activity-title {
+            margin: 0 0 10px 0;
+            color: #007bff;
+        }
+        .activity-date {
+            font-size: 12px;
+            color: #777;
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>ကျောင်းလှုပ်ရှားမှုဆောင်ရွက်ချက်များ တင်ရန်</h2>
+    
+    <!-- အချက်အလက်ဖြည့်သွင်းရန် Form -->
+    <div class="upload-form">
+        <div class="form-group">
+            <label for="title">ခေါင်းစဉ်</label>
+            <input type="text" id="title" placeholder="ဥပမာ - မိုးရာသီ သစ်ပင်စိုက်ပျိုးပွဲ">
+        </div>
+        <div class="form-group">
+            <label for="date">ရက်စွဲ</label>
+            <input type="date" id="date">
+        </div>
+        <div class="form-group">
+            <label for="image">ဓာတ်ပုံလင့်ခ် (သို့) ပုံရွေးရန်</label>
+            <input type="file" id="image" accept="image/*">
+        </div>
+        <div class="form-group">
+            <label for="description">အကြောင်းအရာ</label>
+            <textarea id="description" rows="4" placeholder="လှုပ်ရှားမှုအကြောင်းအရာ အသေးစိတ်ရေးရန်..."></textarea>
+        </div>
+        <button class="btn-submit" onclick="addActivity()">တင်မည်</button>
+    </div>
+
+    <h2>လက်ရှိလှုပ်ရှားမှုများ</h2>
+    <!-- တင်ပြီးသားစာရင်းများကို ပြသမည့်နေရာ -->
+    <div class="activity-list" id="activityList">
+        <!-- ဤနေရာတွင် JavaScript က အလိုအလျောက် လာထည့်ပေးမည်ဖြစ်သည် -->
+    </div>
+</div>
+
+<script>
+    // လှုပ်ရှားမှုအသစ်ထည့်သည့် Function
+    function addActivity() {
+        const title = document.getElementById('title').value;
+        const date = document.getElementById('date').value;
+        const imageInput = document.getElementById('image');
+        const description = document.getElementById('description').value;
+
+        if (!title || !date || !description) {
+            alert('ကျေးဇူးပြု၍ အချက်အလက်များကို ပြည့်စုံစွာဖြည့်ပါ။');
+            return;
+        }
+
+        const activityList = document.getElementById('activityList');
+
+        // ပုံဖတ်ခြင်းလုပ်ငန်းစဉ်
+        if (imageInput.files && imageInput.files[0]) {
+            const reader = new FileReader();
+            
+            reader.onload = function(e) {
+                const imageUrl = e.target.result;
+                
+                // Card ပုံစံ HTML တည်ဆောက်ခြင်း
+                const card = document.createElement('div');
+                card.className = 'activity-card';
+                card.innerHTML = `
+                    <img src="${imageUrl}" alt="Activity Image">
+                    <div class="activity-content">
+                        <h3 class="activity-title">${title}</h3>
+                        <div class="activity-date">ရက်စွဲခရိုနီ - ${date}</div>
+                        <p>${description}</p>
+                    </div>
+                `;
+                
+                // စာရင်းထဲသို့ အပေါ်ဆုံးကနေ ထည့်ပေးခြင်း
+                activityList.insertBefore(card, activityList.firstChild);
+                
+                // Form ထဲက အချက်အလက်များကို ပြန်ဖျက်ခြင်း (Reset လုပ်ခြင်း)
+                document.getElementById('title').value = '';
+                document.getElementById('date').value = '';
+                document.getElementById('image').value = '';
+                document.getElementById('description').value = '';
+            };
+            
+            reader.readAsDataURL(imageInput.files[0]);
+        } else {
+            alert('ကျေးဇူးပြု၍ ဓာတ်ပုံတစ်ပုံ ရွေးချယ်ပေးပါ။');
+        }
+    }
+</script>
+
+</body>
+</html>
